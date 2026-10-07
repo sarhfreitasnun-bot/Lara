@@ -1,332 +1,949 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html>  <html lang="pt-BR">  
+<head>  
+<meta charset="UTF-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>Lara ♡</title>  <style>  
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap');  
+  
+* {  
+    margin: 0;  
+    padding: 0;  
+    box-sizing: border-box;  
+}  
+  
+html {  
+    scroll-behavior: smooth;  
+}  
+  
+body {  
+    background: #090609;  
+    color: #f8edf3;  
+    font-family: 'Montserrat', sans-serif;  
+    overflow-x: hidden;  
+}  
+  
+body::before {  
+    content: "";  
+    position: fixed;  
+    inset: 0;  
+    pointer-events: none;  
+    background:  
+        radial-gradient(circle at 20% 20%, rgba(255, 70, 140, .10), transparent 30%),  
+        radial-gradient(circle at 80% 70%, rgba(120, 50, 150, .10), transparent 30%);  
+    z-index: -1;  
+}  
+  
+/* CORAÇÕES */  
+  
+.heart {  
+    position: fixed;  
+    bottom: -20px;  
+    font-size: 16px;  
+    opacity: .5;  
+    animation: subir 8s linear infinite;  
+    pointer-events: none;  
+    z-index: 5;  
+}  
+  
+@keyframes subir {  
+    0% {  
+        transform: translateY(0) rotate(0deg);  
+        opacity: 0;  
+    }  
+    15% {  
+        opacity: .6;  
+    }  
+    100% {  
+        transform: translateY(-110vh) rotate(30deg);  
+        opacity: 0;  
+    }  
+}  
+  
+/* CAPA */  
+  
+.hero {  
+    min-height: 100vh;  
+    display: flex;  
+    flex-direction: column;  
+    justify-content: center;  
+    align-items: center;  
+    text-align: center;  
+    padding: 30px;  
+    position: relative;  
+    background:  
+        linear-gradient(rgba(9,6,9,.25), rgba(9,6,9,.9)),  
+        radial-gradient(circle, #54233e 0%, #180b15 45%, #090609 100%);  
+}  
+  
+.hero-small {  
+    font-size: 12px;  
+    letter-spacing: 5px;  
+    text-transform: uppercase;  
+    opacity: .65;  
+    margin-bottom: 25px;  
+}  
+  
+.hero h1 {  
+    font-family: 'Cormorant Garamond', serif;  
+    font-size: clamp(75px, 22vw, 170px);  
+    font-weight: 400;  
+    line-height: .8;  
+    font-style: italic;  
+}  
+  
+.hero-subtitle {  
+    margin-top: 35px;  
+    max-width: 500px;  
+    font-family: 'Cormorant Garamond', serif;  
+    font-size: 24px;  
+    line-height: 1.5;  
+    opacity: .9;  
+}  
+  
+.enter {  
+    margin-top: 50px;  
+    padding: 15px 28px;  
+    border: 1px solid rgba(255,255,255,.35);  
+    border-radius: 50px;  
+    color: white;  
+    text-decoration: none;  
+    font-size: 11px;  
+    letter-spacing: 3px;  
+    text-transform: uppercase;  
+    transition: .3s;  
+}  
+  
+.enter:hover {  
+    background: white;  
+    color: #120912;  
+}  
+  
+/* SEÇÕES */  
+  
+section {  
+    max-width: 850px;  
+    margin: auto;  
+    padding: 110px 25px;  
+}  
+  
+.chapter {  
+    text-align: center;  
+    margin-bottom: 55px;  
+}  
+  
+.chapter-number {  
+    font-size: 10px;  
+    letter-spacing: 5px;  
+    opacity: .45;  
+    text-transform: uppercase;  
+}  
+  
+.chapter h2 {  
+    font-family: 'Cormorant Garamond', serif;  
+    font-size: clamp(42px, 11vw, 75px);  
+    font-weight: 400;  
+    font-style: italic;  
+    margin-top: 12px;  
+}  
+  
+.chapter-line {  
+    width: 45px;  
+    height: 1px;  
+    background: rgba(255,255,255,.4);  
+    margin: 25px auto;  
+}  
+  
+.text {  
+    font-family: 'Cormorant Garamond', serif;  
+    font-size: 23px;  
+    line-height: 1.65;  
+    color: #eadde5;  
+}  
+  
+.text p {  
+    margin-bottom: 25px;  
+}  
+  
+.quote {  
+    font-family: 'Cormorant Garamond', serif;  
+    font-size: 35px;  
+    font-style: italic;  
+    text-align: center;  
+    margin: 60px 0;  
+    color: #fff;  
+}  
+  
+.highlight {  
+    color: #ffb1d0;  
+}  
+  
+/* REENCONTRO */  
+  
+.reunion {  
+    text-align: center;  
+    padding: 100px 25px;  
+    background:  
+        linear-gradient(135deg, rgba(255,80,150,.08), rgba(100,40,130,.08));  
+    border-top: 1px solid rgba(255,255,255,.08);  
+    border-bottom: 1px solid rgba(255,255,255,.08);  
+}  
+  
+.years {  
+    display: flex;  
+    justify-content: center;  
+    align-items: center;  
+    gap: 30px;  
+    margin: 50px 0;  
+}  
+  
+.age {  
+    font-family: 'Cormorant Garamond', serif;  
+    font-size: 70px;  
+}  
+  
+.arrow {  
+    font-size: 25px;  
+    opacity: .4;  
+}  
+  
+.twelve {  
+    font-size: 11px;  
+    letter-spacing: 5px;  
+    text-transform: uppercase;  
+    opacity: .6;  
+}  
+  
+/* FOTOS */  
+  
+.gallery {  
+    display: grid;  
+    grid-template-columns: repeat(2, 1fr);  
+    gap: 12px;  
+}  
+  
+.photo {  
+    aspect-ratio: 1 / 1.25;  
+    overflow: hidden;  
+    border-radius: 5px;  
+    background: linear-gradient(145deg, #321522, #170d15);  
+    position: relative;  
+}  
+  
+.photo img {  
+    width: 100%;  
+    height: 100%;  
+    object-fit: cover;  
+    display: block;  
+    transition: transform .6s ease;  
+}  
+  
+.photo:hover img {  
+    transform: scale(1.05);  
+}  
+  
+.photo.big {  
+    grid-column: span 2;  
+    aspect-ratio: 16 / 10;  
+}  
+  
+/* MOMENTOS */  
+  
+.moment {  
+    border-left: 1px solid rgba(255,177,208,.4);  
+    padding-left: 25px;  
+    margin: 50px 0;  
+}  
+  
+.moment h3 {  
+    font-family: 'Cormorant Garamond', serif;  
+    font-size: 32px;  
+    font-weight: 500;  
+    margin-bottom: 10px;  
+}  
+  
+.moment p {  
+    font-family: 'Cormorant Garamond', serif;  
+    font-size: 21px;  
+    line-height: 1.6;  
+    opacity: .8;  
+}  
+  
+/* MÚSICA */  
+  
+.music {  
+    text-align: center;  
+    padding: 100px 25px;  
+    background: radial-gradient(circle, #321323, #090609 70%);  
+}  
+  
+.music-note {  
+    font-size: 40px;  
+    margin-bottom: 20px;  
+}  
+  
+.music h2 {  
+    font-family: 'Cormorant Garamond', serif;  
+    font-size: 55px;  
+    font-weight: 400;  
+    font-style: italic;  
+}  
+  
+.music p {  
+    margin: 15px auto 35px;  
+    opacity: .65;  
+    font-size: 13px;  
+}  
+  
+.music-button {  
+    display: inline-block;  
+    padding: 16px 30px;  
+    border-radius: 50px;  
+    border: 1px solid rgba(255,255,255,.3);  
+    color: white;  
+    text-decoration: none;  
+    font-size: 11px;  
+    letter-spacing: 2px;  
+    text-transform: uppercase;  
+}  
+  
+/* FINAL */  
+  
+.final {  
+    min-height: 100vh;  
+    display: flex;  
+    flex-direction: column;  
+    justify-content: center;  
+    align-items: center;  
+    text-align: center;  
+    padding: 30px;  
+    background:  
+        radial-gradient(circle at center, #51233e, #160b14 45%, #090609 80%);  
+}  
+  
+.final-small {  
+    font-size: 11px;  
+    letter-spacing: 5px;  
+    text-transform: uppercase;  
+    opacity: .5;  
+    margin-bottom: 30px;  
+}  
+  
+.final h2 {  
+    font-family: 'Cormorant Garamond', serif;  
+    font-size: clamp(48px, 13vw, 90px);  
+    font-weight: 400;  
+    font-style: italic;  
+    line-height: 1;  
+}  
+  
+.final p {  
+    font-family: 'Cormorant Garamond', serif;  
+    font-size: 25px;  
+    max-width: 600px;  
+    line-height: 1.5;  
+    margin-top: 35px;  
+}  
+  
+.signature {  
+    margin-top: 60px;  
+    font-family: 'Cormorant Garamond', serif;  
+    font-size: 28px;  
+    font-style: italic;  
+    color: #ffb1d0;  
+}  
+  
+/* MOBILE */  
+  
+@media (max-width: 600px) {  
+  
+    section {  
+        padding: 85px 22px;  
+    }  
+  
+    .text {  
+        font-size: 21px;  
+    }  
+  
+    .quote {  
+        font-size: 30px;  
+    }  
+  
+    .gallery {  
+        gap: 8px;  
+    }  
+  
+    .years {  
+        gap: 18px;  
+    }  
+  
+    .age {  
+        font-size: 55px;  
+    }  
+}  
+</style>  </head>  <body>  <!-- CORAÇÕES -->  <div class="heart" style="left:8%; animation-delay:0s;">♡</div>  
+<div class="heart" style="left:25%; animation-delay:2s;">♡</div>  
+<div class="heart" style="left:48%; animation-delay:4s;">♡</div>  
+<div class="heart" style="left:72%; animation-delay:1s;">♡</div>  
+<div class="heart" style="left:90%; animation-delay:5s;">♡</div>  <!-- CAPA -->  <header class="hero" id="inicio">  <div class="hero-small">  
+    uma história que começou antes mesmo da gente saber  
+</div>  
 
-<title>Lara ♡</title>
+<h1>Lara</h1>  
 
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
+<div class="hero-subtitle">  
+    Eu não estava procurando você.  
+    <br>  
+    Mas talvez a vida já estivesse preparando a gente.  
+</div>  
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+<a href="#historia" class="enter">  
+    entrar na nossa história ♡  
+</a>
 
-html {
-    scroll-behavior: smooth;
-}
+</header>  <!-- HISTÓRIA -->  <section id="historia">  <div class="chapter">  
+    <div class="chapter-number">01 — o começo</div>  
+    <h2>Eu não estava procurando você.</h2>  
+    <div class="chapter-line"></div>  
+</div>  
 
-body {
-    background: #090609;
-    color: #f8edf3;
-    font-family: 'Montserrat', sans-serif;
-    overflow-x: hidden;
-}
+<div class="text">  
 
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    background:
-        radial-gradient(circle at 20% 20%, rgba(255, 70, 140, .10), transparent 30%),
-        radial-gradient(circle at 80% 70%, rgba(120, 50, 150, .10), transparent 30%);
-    z-index: -1;
-}
+    <p>  
+        Eu estava na Parada, curtindo o momento, com uma  
+        dor de cabeça infernal e completamente alheia ao  
+        fato de que alguém estava me olhando.  
+    </p>  
 
-/* CORAÇÕES */
+    <p>  
+        Você estava.  
+        <br>  
+        <span class="highlight">Muito.</span>  
+    </p>  
 
-.heart {
-    position: fixed;
-    bottom: -20px;
-    font-size: 16px;
-    opacity: .5;
-    animation: subir 8s linear infinite;
-    pointer-events: none;
-    z-index: 5;
-}
+    <p>  
+        Até que a Mika chegou em mim e soltou:  
+    </p>  
 
-@keyframes subir {
-    0% {
-        transform: translateY(0) rotate(0deg);
-        opacity: 0;
-    }
-    15% {
-        opacity: .6;
-    }
-    100% {
-        transform: translateY(-110vh) rotate(30deg);
-        opacity: 0;
-    }
-}
+    <div class="quote">  
+        “Minha amiga te achou muito bonita.  
+        Posso pegar seu Instagram pra ela?”  
+    </div>  
 
-/* CAPA */
+    <p>  
+        Eu pensei:  
+        <br><br>  
+        <em>“Véi… mas que porra?”</em>  
+    </p>  
 
-.hero {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 30px;
-    position: relative;
-    background:
-        linear-gradient(rgba(9,6,9,.25), rgba(9,6,9,.9)),
-        radial-gradient(circle, #54233e 0%, #180b15 45%, #090609 100%);
-}
+    <p>  
+        Mas passei.  
+    </p>  
 
-.hero-small {
-    font-size: 12px;
-    letter-spacing: 5px;
-    text-transform: uppercase;
-    opacity: .65;
-    margin-bottom: 25px;
-}
+    <p>  
+        E achei que seria só isso.  
+        Mais um Instagram trocado.  
+        Mais uma pessoa que talvez mandasse uma mensagem  
+        ou talvez nunca mais aparecesse.  
+    </p>  
 
-.hero h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(75px, 22vw, 170px);
-    font-weight: 400;
-    line-height: .8;
-    font-style: italic;
-}
+    <p>  
+        Só que você apareceu.  
+    </p>  
 
-.hero-subtitle {
-    margin-top: 35px;
-    max-width: 500px;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 24px;
-    line-height: 1.5;
-    opacity: .9;
-}
+</div>
 
-.enter {
-    margin-top: 50px;
-    padding: 15px 28px;
-    border: 1px solid rgba(255,255,255,.35);
-    border-radius: 50px;
-    color: white;
-    text-decoration: none;
-    font-size: 11px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    transition: .3s;
-}
+</section>  <!-- 12 ANOS -->  <div class="reunion">  <div class="chapter-number">02 — antes de nós</div>  
 
-.enter:hover {
-    background: white;
-    color: #120912;
-}
+<h2 style="font-family:'Cormorant Garamond'; font-size:55px; font-weight:400; font-style:italic; margin-top:15px;">  
+    A gente já tinha se visto.  
+</h2>  
 
-/* SEÇÕES */
+<div class="years">  
 
-section {
-    max-width: 850px;
-    margin: auto;
-    padding: 110px 25px;
-}
+    <div>  
+        <div class="age">6</div>  
+        <div class="twelve">eu</div>  
+    </div>  
 
-.chapter {
-    text-align: center;
-    margin-bottom: 55px;
-}
+    <div class="arrow">♡</div>  
 
-.chapter-number {
-    font-size: 10px;
-    letter-spacing: 5px;
-    opacity: .45;
-    text-transform: uppercase;
-}
+    <div>  
+        <div class="age">7</div>  
+        <div class="twelve">você</div>  
+    </div>  
 
-.chapter h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(42px, 11vw, 75px);
-    font-weight: 400;
-    font-style: italic;
-    margin-top: 12px;
-}
+</div>  
 
-.chapter-line {
-    width: 45px;
-    height: 1px;
-    background: rgba(255,255,255,.4);
-    margin: 25px auto;
-}
+<div class="twelve">  
+    doze anos antes de tudo  
+</div>  
 
-.text {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 23px;
-    line-height: 1.65;
-    color: #eadde5;
-}
+<div class="text" style="max-width:650px; margin:45px auto 0;">  
+    <p>  
+        Há doze anos, nossas vidas já tinham se cruzado.  
+    </p>  
 
-.text p {
-    margin-bottom: 25px;
-}
+    <p>  
+        Você estudava com meu primo.  
+        Eu já tinha ido à escola dele e, em algum momento,  
+        nós duas estivemos no mesmo lugar.  
+    </p>  
 
-.quote {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 35px;
-    font-style: italic;
-    text-align: center;
-    margin: 60px 0;
-    color: #fff;
-}
+    <p>  
+        Você tinha sete.  
+        Eu tinha seis.  
+    </p>  
 
-.highlight {
-    color: #ffb1d0;
-}
+    <p>  
+        A gente só não sabia ainda que um dia  
+        iria se encontrar de verdade.  
+    </p>  
 
-/* REENCONTRO */
+    <div class="quote">  
+        “A gente só não sabia ainda.”  
+    </div>  
 
-.reunion {
-    text-align: center;
-    padding: 100px 25px;
-    background:
-        linear-gradient(135deg, rgba(255,80,150,.08), rgba(100,40,130,.08));
-    border-top: 1px solid rgba(255,255,255,.08);
-    border-bottom: 1px solid rgba(255,255,255,.08);
-}
+    <p>  
+        Doze anos depois, eu postei uma foto dos seus olhos.  
+        Meu primo viu.  
+        Abriu seu perfil.  
+    </p>  
 
-.years {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-    margin: 50px 0;
-}
+    <p>  
+        <strong>“Caralho, eu já estudei com essa menina.”</strong>  
+    </p>  
 
-.age {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 70px;
-}
+    <p>  
+        E então a gente descobriu.  
+    </p>  
 
-.arrow {
-    font-size: 25px;
-    opacity: .4;
-}
+    <p>  
+        A vida tinha dado um jeito de fazer a gente  
+        se reencontrar.  
+    </p>  
+</div>
 
-.twelve {
-    font-size: 11px;
-    letter-spacing: 5px;
-    text-transform: uppercase;
-    opacity: .6;
-}
+</div>  <!-- PRIMEIRA MENSAGEM -->  <section>  <div class="chapter">  
+    <div class="chapter-number">03 — a primeira mensagem</div>  
+    <h2>Foi fácil.</h2>  
+    <div class="chapter-line"></div>  
+</div>  
 
-/* FOTOS */
+<div class="text">  
 
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-}
+    <p>  
+        Você me disse que tinha me achado muito linda  
+        e resolveu falar comigo.  
+    </p>  
 
-.photo {
-    aspect-ratio: 1 / 1.25;
-    overflow: hidden;
-    border-radius: 5px;
-    background: linear-gradient(145deg, #321522, #170d15);
-    position: relative;
-}
+    <p>  
+        E, de alguma forma, desde a primeira conversa,  
+        parecia que a gente já se conhecia.  
+    </p>  
 
-.photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform .6s ease;
-}
+    <p>  
+        A conversa fluía.  
+        A gente ria.  
+        A gente se entendia.  
+    </p>  
 
-.photo:hover img {
-    transform: scale(1.05);
-}
+    <div class="quote">  
+        Duas emocionadas fazendo planos  
+        antes mesmo de conseguirem esperar.  
+    </div>  
 
-.photo.big {
-    grid-column: span 2;
-    aspect-ratio: 16 / 10;
-}
+    <p>  
+        A gente queria se ver.  
+        Queria saber o que a outra gostava.  
+        Queria descobrir nossas flores favoritas,  
+        nossos sonhos, nossas pequenas manias.  
+    </p>  
 
-/* MOMENTOS */
+    <p>  
+        E, quando eu percebi, já estávamos trocando  
+        fotos dos nossos olhos para colocar como  
+        papel de parede.  
+    </p>  
 
-.moment {
-    border-left: 1px solid rgba(255,177,208,.4);
-    padding-left: 25px;
-    margin: 50px 0;
-}
+</div>
 
-.moment h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 32px;
-    font-weight: 500;
-    margin-bottom: 10px;
-}
+</section>  <!-- PRIMEIRO ENCONTRO -->  <section>  <div class="chapter">  
+    <div class="chapter-number">04 — aquele dia</div>  
+    <h2>Então você veio.</h2>  
+    <div class="chapter-line"></div>  
+</div>  
 
-.moment p {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 21px;
-    line-height: 1.6;
-    opacity: .8;
-}
+<div class="text">  
 
-/* MÚSICA */
+    <p>  
+        Você estava tímida.  
+    </p>  
 
-.music {
-    text-align: center;
-    padding: 100px 25px;
-    background: radial-gradient(circle, #321323, #090609 70%);
-}
+    <p>  
+        Me abraçava e perguntava o tempo inteiro  
+        se eu estava bem.  
+    </p>  
 
-.music-note {
-    font-size: 40px;
-    margin-bottom: 20px;
-}
+    <p>  
+        Me enchia de beijinhos.  
+    </p>  
 
-.music h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 55px;
-    font-weight: 400;
-    font-style: italic;
-}
+    <p>  
+        E eu lembro de olhar para você e pensar  
+        em como era estranho alguém conseguir me deixar  
+        tão confortável e tão nervosa ao mesmo tempo.  
+    </p>  
 
-.music p {
-    margin: 15px auto 35px;
-    opacity: .65;
-    font-size: 13px;
-}
+    <div class="quote">  
+        Não foi o que aconteceu entre quatro paredes  
+        que ficou mais marcado em mim.  
+    </div>  
 
-.music-button {
-    display: inline-block;
-    padding: 16px 30px;
-    border-radius: 50px;
-    border: 1px solid rgba(255,255,255,.3);
-    color: white;
-    text-decoration: none;
-    font-size: 11px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
+    <p>  
+        Foi fazer carinho no seu cabelo.  
+    </p>  
 
-/* FINAL */
+    <p>  
+        Foi olhar para aqueles olhos verdes.  
+    </p>  
 
-.final {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 30px;
-    background:
-        radial-gradient(circle at center, #51233e, #160b14 45%, #090609 80%);
-}
+    <p>  
+        Ver suas pupilas completamente dilatadas.  
+    </p>  
 
-.final-small {
-    font-size: 11px;
-    letter-spacing: 5px;
-    text-transform: uppercase;
-    opacity: .5;
-    margin
+    <p>  
+        Aquele sorriso bobo.  
+    </p>  
+
+    <div class="quote">  
+        “Caralho. Eu gosto dessa garota.”  
+    </div>  
+
+    <p>  
+        Na manhã seguinte, antes de você ir embora,  
+        eu enchi seu rosto de beijinhos.  
+    </p>  
+
+    <p>  
+        Literalmente.  
+    </p>  
+
+    <p>  
+        Deixei você sair daqui cheia de marcas de batom.  
+    </p>  
+
+</div>
+
+</section>  <!-- GALERIA -->  <section>  <div class="chapter">  
+    <div class="chapter-number">05 — você</div>  
+    <h2>Algumas das minhas favoritas.</h2>  
+    <div class="chapter-line"></div>  
+</div>  
+
+<div class="gallery">  
+
+    <div class="photo big">  
+        <img src="foto01.jpg" alt="Lara">  
+    </div>  
+
+    <div class="photo">  
+        <img src="foto02.jpg" alt="Lara">  
+    </div>  
+
+    <div class="photo">  
+        <img src="foto03.jpg" alt="Lara">  
+    </div>  
+
+    <div class="photo">  
+        <img src="foto04.jpg" alt="Nós duas">  
+    </div>  
+
+    <div class="photo">  
+        <img src="foto05.jpg" alt="Nós duas">  
+    </div>  
+
+    <div class="photo big">  
+        <img src="foto06.jpg" alt="Nós duas">  
+    </div>  
+
+    <div class="photo">  
+        <img src="foto07.jpg" alt="Lara">  
+    </div>  
+
+    <div class="photo">  
+        <img src="foto08.jpg" alt="Nós duas">  
+    </div>  
+
+    <div class="photo">  
+        <img src="foto09.jpg" alt="Lara">  
+    </div>  
+
+    <div class="photo">  
+        <img src="foto10.jpg" alt="Nós duas">  
+    </div>  
+
+    <div class="photo big">  
+        <img src="foto11.jpg" alt="Nós duas">  
+    </div>  
+
+    <div class="photo">  
+        <img src="foto12.jpg" alt="Lara">  
+    </div>  
+
+    <div class="photo">  
+        <img src="foto13.jpg" alt="Lara">  
+    </div>  
+
+    <div class="photo">  
+        <img src="foto14.jpg" alt="Nós duas">  
+    </div>  
+
+    <div class="photo">  
+        <img src="foto15.jpg" alt="Lara">  
+    </div>  
+
+    <div class="photo big">  
+        <img src="foto16.jpg" alt="Nós duas">  
+    </div>  
+
+    <div class="photo">  
+        <img src="foto17.jpg" alt="Lara">  
+    </div>  
+
+    <div class="photo">  
+        <img src="foto18.jpg" alt="Nós duas">  
+    </div>  
+
+    <div class="photo">  
+        <img src="foto19.jpg" alt="Lara">  
+    </div>  
+
+    <div class="photo">  
+        <img src="foto20.jpg" alt="Nós duas">  
+    </div>  
+
+</div>
+
+</section>  <!-- MEDOS -->  <section>  <div class="chapter">  
+    <div class="chapter-number">06 — a gente teve medo</div>  
+    <h2>Mas tentou mesmo assim.</h2>  
+    <div class="chapter-line"></div>  
+</div>  
+
+<div class="moment">  
+    <h3>“E se não der certo?”</h3>  
+    <p>  
+        A gente falou dos nossos defeitos, das pessoas  
+        que já passaram pelas nossas vidas e do medo  
+        de encontrar alguém que finalmente tratasse  
+        a gente do jeito que sempre quisemos.  
+    </p>  
+</div>  
+
+<div class="moment">  
+    <h3>“A gente vai dar nosso máximo.”</h3>  
+    <p>  
+        Mesmo com medo, a gente decidiu tentar.  
+    </p>  
+</div>
+
+</section>  <!-- PEQUENAS COISAS -->  <section>  <div class="chapter">  
+    <div class="chapter-number">07 — pequenas coisas</div>  
+    <h2>Que ficaram enormes.</h2>  
+    <div class="chapter-line"></div>  
+</div>  
+
+<div class="text">  
+
+    <p>  
+        Eu instalei o Twitter só para combinar com você.  
+    </p>  
+
+    <p>  
+        Fui ao mercado com uma amiga e comprei um buquê  
+        para te entregar no intervalo do seu trabalho.  
+    </p>  
+
+    <p>  
+        Levei bilhetinhos.  
+    </p>  
+
+    <p>  
+        Você me entregou uma carta.  
+    </p>  
+
+    <div class="quote">  
+        T-A-P-S-E-D  
+        <br>  
+        <span style="font-size:22px;">  
+            Te amo para sempre e depois.  
+        </span>  
+    </div>  
+
+    <p>  
+        A gente falou dos nossos bichinhos.  
+        Dos nossos planos.  
+        Dos nossos sonhos.  
+        Do futuro.  
+    </p>  
+
+    <p>  
+        E, aos poucos, percebi uma coisa que eu não esperava:  
+    </p>  
+
+    <p>  
+        Você queria uma família.  
+        <br>  
+        Eu também.  
+    </p>  
+
+    <p>  
+        Você queria casar.  
+        <br>  
+        Eu também.  
+    </p>  
+
+    <p>  
+        Você queria construir alguma coisa de verdade.  
+        <br>  
+        Eu também.  
+    </p>  
+
+    <div class="quote">  
+        E um sonho que eu tinha deixado de acreditar  
+        voltou a existir.  
+    </div>  
+
+</div>
+
+</section>  <!-- APAIXONANDO -->  <section>  <div class="chapter">  
+    <div class="chapter-number">08 — e então</div>  
+    <h2>Eu comecei a esperar por você.</h2>  
+    <div class="chapter-line"></div>  
+</div>  
+
+<div class="text">  
+
+    <p>  
+        Comecei a esperar suas mensagens.  
+    </p>  
+
+    <p>  
+        Quando demoravam, eu pensava:  
+        <em>“Ela deve estar trabalhando.”</em>  
+    </p>  
+
+    <div class="quote">  
+        Mas, no fundo, era só:  
+        <br>  
+        “Que saudade dessa garota.”  
+    </div>  
+
+    <p>  
+        Vieram os apelidos.  
+    </p>  
+
+    <p>  
+        E agora, se você me chama de Sarah...  
+    </p>  
+
+    <div class="quote">  
+        “Oxe. Meu nome não é esse pra você.”  
+    </div>  
+
+    <p>  
+        Se eu te chamo de Lara...  
+    </p>  
+
+    <div class="quote">  
+        “Oxe. Meu nome não é esse pra você.”  
+    </div>  
+
+    <p>  
+        Porque já não parece certo chamar você pelo nome.  
+    </p>  
+
+    <p>  
+        Você virou minha neném.  
+        <br>  
+        Minha princesa.  
+        <br>  
+        Meu amor.  
+    </p>  
+
+</div>
+
+</section>  <!-- OLHOS -->  <section>  <div class="chapter">  
+    <div class="chapter-number">09 — seus olhos</div>  
+    <h2>Eu poderia ficar olhando para sempre.</h2>  
+    <div class="chapter-line"></div>  
+</div>  
+
+<div class="text">  
+
+    <p>  
+        Eu tremo quando chego perto de você.  
+    </p>  
+
+    <p>  
+        Porque existe alguma coisa no seu olhar que me prende.  
+    </p>  
+
+    <p>  
+        Eu olho para aqueles olhos verdes e tenho vontade  
+        de continuar olhando por todo o tempo do mundo.  
+    </p>  
+
+    <p>  
+        Tenho vontade de cuidar.  
+        <br>  
+        De proteger.  
+        <br>  
+        De estar perto.  
+        <br>  
+        De fazer parte.  
+    </p>  
+
+</div>
+
+</section>  <!-- MÚSICA -->  <div class="music">  <div class="music-note">♫</div>  
+
+<h2>Legendary Lovers</h2>  
+
+<p>  
+    Uma música para você ouvir pensando em nós.  
+</p>  
+
+<a  
+    class="music-button"  
+    href="https://www.youtube.com/results?search_query=Katy+Perry+Legendary+Lovers"  
+    target="_blank"  
+>  
+    ♡ ouvir nossa música  
+</a>
+
+</div>  <!-- FINAL -->  <div class="final">  <div class="final-small">  
+    10 — até aqui  
+</div>  
+
+<h2>  
+    Eu estou me apaixonando por você.  
+</h2>  
+
+<p>  
+    E, pela primeira vez em muito tempo,  
+    quando penso no futuro,  
+    eu não sinto vontade de fugir dele.  
+</p>  
+
+<p>  
+    Eu sinto vontade de imaginar você nele.  
+</p>  
+
+<div class="signature">  
+    Lara, essa é a nossa história até aqui.  
+    <br>  
+    E eu espero que seja só o começo. ♡  
+</div>
+
+</div>  </body>  
+    </html>
